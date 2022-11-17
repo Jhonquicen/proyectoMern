@@ -1,0 +1,17 @@
+body {
+    background-image: url(https://orgullosamenteantioqueno.com/wp-content/uploads/2020/01/Los-Pueblos-Patrimonio-de-Antioquia.jpg);
+    background-repeat: no-repeat ;
+    background-size: cover;
+
+}
+.container {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    border: 1px solid black;
+    
+    
+    opacity: 2;
+}
