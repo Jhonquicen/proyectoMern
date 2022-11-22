@@ -5,27 +5,41 @@ const EsquemaGuia = new mongoose.Schema({
     nombre: {
         type: String,
         required: [true, "Nombre obligatorio"],
-        minLength: [3, "Nombre debe tener al menos 3 caracteres"]
+        
+    },
+    gastronomia: {
+        type: String,
+        required: [true, "Gastronomia obligatoria"]
+        
     },
 
-    lugar: {
+    fiesta: {
         type: String,
-        required: [true, "lugar obligatorio"],
-        minLength: [3, "el Guia debe tener al menos 3 caracteres"]
+        required: [true, "Fiestas obligatorias"]
+        
     },
 
-    
-
-    categoria: {
+    atraccion: {
         type: String,
-        required:[true, "categoria obligatoria"]
+        required: [true, "Actraccion obligatoria"]
+        
+    },
+
+    clima: {
+        type: String,
+        required: [true, "Clima obligatorio"]
+        
+    },
+
+    imagen: {
+        type: String,
+        required: [true, "Imagen obligatoria"]
+    },
+
+    coordinates: {
+        type: String,
+        required: [true, "Coordenadas obligatoria"]
     }
-
-    // estado: {
-    //     type: Array,
-    //     required: [true, "Estados obligatorios"],
-    //     default: ["undecided","undecided","undecided"]
-    // }   otra forma de hacer la accion
 
 }, {timestamps: true, versionKey:false})
 
