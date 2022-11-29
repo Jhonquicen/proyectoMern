@@ -13,6 +13,11 @@ const EsquemaGuia = new mongoose.Schema({
         
     },
 
+    descripcion: {
+        type: String,
+        required: [true, "Descripcion obligatoria"]
+    },
+
     fiesta: {
         type: String,
         required: [true, "Fiestas obligatorias"]
@@ -21,13 +26,19 @@ const EsquemaGuia = new mongoose.Schema({
 
     atraccion: {
         type: String,
-        required: [true, "Actraccion obligatoria"]
+        required: [true, "Atraccion obligatoria"]
         
     },
 
-    clima: {
+    gentilicio: {
         type: String,
-        required: [true, "Clima obligatorio"]
+        required: [true, "Gentilicio obligatorio"]
+        
+    },
+
+    economia: {
+        type: String,
+        required: [true, "Economia obligatorio"]
         
     },
 
@@ -36,9 +47,18 @@ const EsquemaGuia = new mongoose.Schema({
         required: [true, "Imagen obligatoria"]
     },
 
+    // img: {
+    //     type: Boolean,
+    //     default: true
+    // },
+
     coordinates: {
         type: String,
         required: [true, "Coordenadas obligatoria"]
+    },
+
+    comentario: {
+        type: String
     }
 
 }, {timestamps: true, versionKey:false})

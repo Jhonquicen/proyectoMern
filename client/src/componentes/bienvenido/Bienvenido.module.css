@@ -15,3 +15,22 @@ body {
     background-color: rgba(253, 253, 252, 0.541);
     
 }
+.separador{
+    display: flex;
+    flex-direction: row;
+    
+    justify-content: space-around;
+    
+}
+
+.bienvenido{
+    display: flex;
+    justify-content: flex-end;
+}
+.login{
+    display: flex;
+    justify-content: flex-end;
+}
+.mensaje {
+    text-align: center;
+}
