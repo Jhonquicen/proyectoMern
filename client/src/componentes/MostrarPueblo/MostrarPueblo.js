@@ -64,9 +64,14 @@ const MostrarPueblo = () => {
                     <div>
                         <p><b>Economia:</b> {pueblo.economia}</p>
                     </div>
-                    <div>
-                        
-                        <Link to="/colombia" className='btn btn-outline-info'>regresar</Link>
+                    <div className={`container ${styles.icono}`}>
+                        <div className={`container ${styles.pulse}`}>
+
+                            <Link to="/colombia" className='btn btn-outline-info'>regresar</Link>
+                        </div>
+                        <div className={`container ${styles.pulse}`}>
+                            <Link to="/" className='material-symbols-outlined'>home</Link>
+                        </div>
                     </div>
                 </div>
 

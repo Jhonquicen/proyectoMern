@@ -19,20 +19,6 @@ const geoUrl =
     "https://raw.githubusercontent.com/deldersveld/topojson/master/countries/colombia/colombia-departments.json";
 
 
-// const markers = [
-//     {
-//         markerOffset: -30,
-//         name: "Medellin",
-//         coordinates: [-75.567, 6.217]
-//     },
-//     // { markerOffset: 15, name: "Bogota", coordinates: [-74.08175, 4.60971] },
-//     // { markerOffset: 15, name: "Bucaramanga", coordinates: [-73.1198, 7.11392] },
-    
-//     // { markerOffset: 15, name: "Cali", coordinates: [-76.5205, 3.42158] },
-    
-// ];
-
-
 const MapChart = () => {
 
     const [pueblos, setPueblos] = useState([])

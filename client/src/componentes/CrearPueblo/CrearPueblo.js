@@ -34,7 +34,7 @@ const PuebloAntioquia = () => {
             economia,
             coordinates
 
-        })
+        }, {withCredentials: true})
             .then(res => history.push("/pueblos"))
             .catch(err => setErrors(err.response.data.errors))
     }

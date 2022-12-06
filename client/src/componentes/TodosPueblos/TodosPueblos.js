@@ -13,7 +13,7 @@ const TodosPueblos = () => {
     // const history = useHistory();
 
     useEffect(() => {
-        axios.get("http://localhost:8000/api/guias")
+        axios.get("http://localhost:8000/api/guias", { withCredentials: true })
 
             .then(res => setPueblo(res.data))
 
@@ -29,7 +29,7 @@ const TodosPueblos = () => {
                 let nuevaLista = pueblo.filter(ciudad => ciudad._id !== id);
                 setPueblo(nuevaLista);
                 console.log(setPueblo)
-            })
+            }, { withCredentials: true })
     }
 
     return (
@@ -42,56 +42,69 @@ const TodosPueblos = () => {
                         pueblo.map((ciudad, index) => (
                             <tr key={index}>
                                 <td>
-                                <div className="border border-dark border border-5 rounded-3 p-3 mb-2">
-                                    <div className={`container ${styles.nombre}`}>
-                                        <h3>Nombre del pueblo: {ciudad.nombre}</h3>
+                                    <div className="border border-dark border border-5 rounded-3 p-3 mb-2">
+                                        <div className={`container ${styles.nombre}`}>
+                                            <h3>Nombre del pueblo: {ciudad.nombre}</h3>
 
-                                    </div>
-                                    <div>
+                                        </div>
                                         <div>
-                                            <p><b>Url de imagen:</b> {ciudad.imagen}</p>
+                                            <div>
+                                                <p><b>Url de imagen:</b> {ciudad.imagen}</p>
+                                            </div>
+                                            <div className={`container ${styles.imagen}`}>
+                                                <img src={ciudad.imagen} className="img-fluid" alt="pueblo"></img>
+                                            </div>
+
                                         </div>
-                                        <div className={`container ${styles.imagen}`}>
-                                            <img src={ciudad.imagen} className="img-fluid" alt="pueblo"></img>
+                                        <div>
+                                            <p>{ciudad.descripcion}</p>
+
+                                        </div>
+                                        <div>
+                                            <p><b>Gastronomia:</b> {ciudad.gastronomia}</p>
+
                                         </div>
 
+                                        <div>
+                                            <p><b>Fiesta:</b> {ciudad.fiesta}</p>
+
+                                        </div>
+
+
+                                        <div>
+                                            <p><b>Atracciones:</b> {ciudad.atraccion}</p>
+
+                                        </div>
+                                        <div>
+                                            <p><b>Gentilicio:</b> {ciudad.gentilicio}</p>
+
+                                        </div>
+
+                                        <div>
+                                            <p><b>Economia:</b> {ciudad.economia}</p>
+
+                                        </div>
+                                        <div className={`container ${styles.icono}`}>
+                                            <div className={`container ${styles.pulse}`}>
+                                                <Link>
+                                                    <span className="material-symbols-outlined" onClick={() => borrarpueblo(ciudad._id)}>
+                                                        delete
+                                                    </span>
+                                                </Link>
+                                            </div>
+                                            {/* <button className="btn btn-danger" onClick={() => borrarpueblo(ciudad._id)}>eliminar</button> */}
+                                            <div className={`container ${styles.pulse}`}>
+                                                <Link to={`/editar/${ciudad._id}`} className='material-symbols-outlined'>edit_note</Link>
+                                            </div>
+                                            <div className={`container ${styles.pulse}`}>
+                                                <Link to="/" className='material-symbols-outlined'>home</Link>
+                                            </div>
+                                            <div className={`container ${styles.pulse}`}>
+                                                <Link to={"/crear"} >crearpueblo</Link>
+                                            </div>
+                                        </div>
+                                            
                                     </div>
-                                    <div>
-                                        <p>{ciudad.descripcion}</p>
-
-                                    </div>
-                                    <div>
-                                        <p><b>Gastronomia:</b> {ciudad.gastronomia}</p>
-
-                                    </div>
-
-                                    <div>
-                                        <p><b>Fiesta:</b> {ciudad.fiesta}</p>
-
-                                    </div>
-
-
-                                    <div>
-                                        <p><b>Atracciones:</b> {ciudad.atraccion}</p>
-
-                                    </div>
-                                    <div>
-                                        <p><b>Gentilicio:</b> {ciudad.gentilicio}</p>
-
-                                    </div>
-
-                                    <div>
-                                        <p><b>Economia:</b> {ciudad.economia}</p>
-
-                                    </div>
-                                    <div>
-                                    
-                                    
-                                        <button className="btn btn-danger" onClick={() => borrarpueblo(ciudad._id)}>eliminar</button>
-                                        <Link to={"/crear"} className='btn btn-primary'>crearpueblo</Link>
-                                        <Link to={`/editar/${ciudad._id}`} className='btn btn-warning'>Editar</Link>
-                                    </div>
-                                </div>
                                 </td>
                             </tr>
 

@@ -20,3 +20,34 @@
     display: flex;
     justify-content: center;
 }
+
+.material-symbols-outlined {
+    
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+    
+}
+
+.icono {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.pulse {
+    animation: pulse 3s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      font-variation-settings: 'wght' 100;
+    }
+    50% {
+      font-variation-settings: 'wght' 700;
+    }
+    100% {
+      font-variation-settings: 'wght' 100;
+    }
+  }

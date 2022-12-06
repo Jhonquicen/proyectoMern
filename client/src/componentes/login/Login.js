@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import axios from "axios";
 import {useHistory, Link} from "react-router-dom";
+import styles from "./login.module.css";
+
 
 const Login = () => {
 
@@ -28,12 +30,12 @@ const Login = () => {
                 } else {
                     history.push('/crear');
                 }
-            })
+            }, {withCredentials: true})
             .catch(err => console.log(err));
     }
 
     return (
-        <div className="container">
+        <div className={`container ${styles.container}`}>
             
             <div className="col-6">
                 <h2>Iniciar Sesión</h2>
